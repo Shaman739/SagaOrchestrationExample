@@ -1,0 +1,12 @@
+
+ConsoleApp1/bin
+Saga/bin
+Microservise/bin
+EventBus/bin
+Core/bin
+
+ConsoleApp1/obj
+Saga/obj
+Microservise/obj
+EventBus/obj
+Core/obj
