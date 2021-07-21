@@ -1,12 +1,21 @@
 
-ConsoleApp1/bin
-Saga/bin
-Microservise/bin
-EventBus/bin
-Core/bin
+App/Core/bin
+App/Core/obj
+App/EventBus/bin
+App/EventBus/obj
 
-ConsoleApp1/obj
-Saga/obj
-Microservise/obj
-EventBus/obj
-Core/obj
+App/MicroserviceCarReservation/bin
+App/MicroserviceCarReservation/obj
+App/MicroserviceGateway/bin
+App/MicroserviceGateway/obj
+App/MicroserviceHotelReservation/bin
+App/MicroserviceHotelReservation/obj
+
+Core/Saga/bin
+Core/Saga/obj
+Core/Core/bin
+Core/Core/obj
+Core/Core.Data/bin
+Core/Core.Data/obj
+Core/Core.UserStory/bin
+Core/Core.UserStory/obj
