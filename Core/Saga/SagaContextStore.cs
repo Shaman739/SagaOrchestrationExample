@@ -8,11 +8,14 @@ namespace Saga
 {
     public class SagaContextStore
     {
-        public SagaContextStore()
+        public SagaContextStore(IStoreComplitedSaga storeComplitedSaga)
         {
             ContextStore = new Dictionary<string, SagaContext>();
+            _storeComplitedSaga = storeComplitedSaga;
         }
         public Dictionary<string, SagaContext> ContextStore { get; set; }
+
+        private IStoreComplitedSaga _storeComplitedSaga;
 
         public void ContinueSaga(string sagaId, bool isCanceled)
         {
@@ -40,8 +43,11 @@ namespace Saga
         private bool FinishSaga(SagaContext sagaContext)
         {
             bool isFinish = false;
-            if (sagaContext.IsCompleted || (sagaContext.IsError && sagaContext.IsCanceled) )
+            if (sagaContext.IsCompleted || (sagaContext.IsError && sagaContext.IsCanceled))
+            {
                 isFinish = true;
+                _storeComplitedSaga.AddCompletedSaga(sagaId: sagaContext.SagaId, countSuccessSteps: sagaContext.CompletedSteps.Count, countNotExecutedSteps: sagaContext.NextSteps.Count, isSuccess: !sagaContext.IsError);
+            }
 
 
             if(isFinish)

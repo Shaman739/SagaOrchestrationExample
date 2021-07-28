@@ -1,4 +1,5 @@
 ﻿using Core.Data.Contract.EventBus;
+using MicroserviceGateway.DTO;
 using MicroserviceGateway.Reservation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -17,12 +18,14 @@ namespace MicroserviceGateway.Controllers
         private readonly ILogger<ReservationTourController> _logger;
         private readonly IEventBus _eventBus;
         private readonly SagaContextStore _sagaContextStore;
+        private readonly IStoreComplitedSaga _storeComplitedSaga;
 
-        public ReservationTourController(ILogger<ReservationTourController> logger, IEventBus eventBus, SagaContextStore sagaContextStore)
+        public ReservationTourController(ILogger<ReservationTourController> logger, IEventBus eventBus, SagaContextStore sagaContextStore, IStoreComplitedSaga storeComplitedSaga)
         {
             _logger = logger;
             _eventBus = eventBus;
             _sagaContextStore = sagaContextStore;
+            _storeComplitedSaga = storeComplitedSaga;
         }
 
         [HttpGet]
@@ -41,6 +44,13 @@ namespace MicroserviceGateway.Controllers
             saga.Run(reservationTour.IdMessage);
 
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("index")]
+        public IActionResult GetCompletedSagas()
+        {
+            return new JsonResult(_storeComplitedSaga.DB.Select(x=> new CompletedSagaDTO() { SagaId = x.sagaId,CountNotExecutedSteps = x.countNotExecutedSteps, CountSuccessSteps = x.countSuccessSteps, isSuccess = x.isSuccess}));
         }
     }
 }

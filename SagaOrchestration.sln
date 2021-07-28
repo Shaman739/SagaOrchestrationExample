@@ -19,9 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{F2AFDD65-B3D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceGateway", "App\MicroserviceGateway\MicroserviceGateway.csproj", "{8ACF302C-B3F2-4242-8D4C-EC59EEBFAEFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceCarReservation", "App\MicroserviceCarReservation\MicroserviceCarReservation.csproj", "{8B781AB0-BAB7-4006-A428-12E59926EB8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceCarReservation", "App\MicroserviceCarReservation\MicroserviceCarReservation.csproj", "{8B781AB0-BAB7-4006-A428-12E59926EB8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceHotelReservation", "App\MicroserviceHotelReservation\MicroserviceHotelReservation.csproj", "{3239D827-4254-492B-8DCF-1C451DC854A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceHotelReservation", "App\MicroserviceHotelReservation\MicroserviceHotelReservation.csproj", "{3239D827-4254-492B-8DCF-1C451DC854A5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{31B68924-882A-4349-B1BE-1DBA985A0808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{3239D827-4254-492B-8DCF-1C451DC854A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3239D827-4254-492B-8DCF-1C451DC854A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3239D827-4254-492B-8DCF-1C451DC854A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B68924-882A-4349-B1BE-1DBA985A0808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B68924-882A-4349-B1BE-1DBA985A0808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B68924-882A-4349-B1BE-1DBA985A0808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B68924-882A-4349-B1BE-1DBA985A0808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

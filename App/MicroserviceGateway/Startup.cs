@@ -28,6 +28,7 @@ namespace MicroserviceGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IStoreComplitedSaga, StoreComplitedSaga>();
             services.AddSingleton<SagaContextStore>();
             services.AddSingleton<IEventBus, EventBusRabbitMQ>();
         }
